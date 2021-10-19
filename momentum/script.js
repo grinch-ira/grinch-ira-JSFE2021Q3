@@ -6,6 +6,8 @@
 // const currentTime = date.toLocaleTimeString();
 // console.log(currentTime)
 
+// body.style.backgroundImage = "url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/evening/18.jpg')";
+//https://api.openweathermap.org/data/2.5/weather?q=Minsk&lang=en&appid=82bd84201c59e882498fe42a509c1616&units=metric
 
 function showTime(){
     const date = new Date();
@@ -50,14 +52,73 @@ getTimeOfDay();
 
 
 
-// function setLocalStorage() {
-//     localStorage.setItem('name', name.value);
-//   }
-//   window.addEventListener('beforeunload', setLocalStorage)
+function setLocalStorage() {
 
-//   function getLocalStorage() {
-//     if(localStorage.getItem('name')) {
-//       name.value = localStorage.getItem('name');
-//     }
-//   }
-//   window.addEventListener('load', getLocalStorage)
+    const name = document.querySelector('.name')
+    localStorage.setItem('name', name.value);
+  }
+
+  window.addEventListener('beforeunload', setLocalStorage)
+
+
+
+  function getLocalStorage() {
+    const name = document.querySelector('.name')
+    if(localStorage.getItem('name')) {
+      name.value = localStorage.getItem('name');
+    }
+  }
+
+  window.addEventListener('load', getLocalStorage)
+
+
+
+
+  
+const weatherIcon = document.querySelector('.weather-icon');
+const temperature = document.querySelector('.temperature');
+const weatherDescription = document.querySelector('.weather-description');
+const windSpeed = document.querySelector('.wind')
+const humidity = document.querySelector('.humidity')
+const city = document.querySelector('.city');
+
+async function getWeather() {
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=en&appid=08f2a575dda978b9c539199e54df03b0&units=metric`;
+  const res = await fetch(url);
+  const data = await res.json();
+  weatherIcon.className = 'weather-icon owf';
+  weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+  temperature.textContent = Math.round((data.main.temp)) +` °C`;
+  weatherDescription.textContent = data.weather[0].description;
+  windSpeed.textContent = Math.round(data.wind.speed) + ` m/s`;
+  humidity.textContent = Math.round(data.main.humidity) + ` %`;
+}
+
+function setCity(event) {
+  if (event.code === 'Enter') {
+    getWeather();
+    city.blur();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', getWeather);
+city.addEventListener('keypress', setCity);
+
+
+
+
+function setLocalCityStorage() {
+    const city = document.querySelector('.city')
+    localStorage.setItem('city', city.value);
+  }
+  window.addEventListener('beforeunload', setLocalCityStorage)
+
+
+
+  function getLocalCityStorage() {
+    const city = document.querySelector('.city')
+    if(localStorage.getItem('city')) {
+      city.value = localStorage.getItem('city');
+    }
+  }
+  window.addEventListener('load', getLocalCityStorage)

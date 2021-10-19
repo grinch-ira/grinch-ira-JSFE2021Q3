@@ -9,6 +9,8 @@
 // body.style.backgroundImage = "url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/evening/18.jpg')";
 //https://api.openweathermap.org/data/2.5/weather?q=Minsk&lang=en&appid=82bd84201c59e882498fe42a509c1616&units=metric
 
+/*==ВРЕМЯ======================================================================*/
+
 function showTime(){
     const date = new Date();
     const currentTime = date.toLocaleTimeString();
@@ -20,6 +22,9 @@ function showTime(){
 showTime();
 
 
+
+/*==ДАТА======================================================================*/
+
 function showDate(){
     const date = new Date();
     const options = {month: 'long', day: 'numeric',weekday:'long'};
@@ -28,6 +33,10 @@ function showDate(){
 
 }
 showDate();
+
+
+
+/*==ВРЕМЯ СУТОК======================================================================*/
 
 function getTimeOfDay(){
     let timeOfDay;
@@ -51,6 +60,7 @@ getTimeOfDay();
 
 
 
+/*==ВВОД И СОХРАНЕНИЕ ИМЕНИ======================================================================*/
 
 function setLocalStorage() {
 
@@ -73,7 +83,7 @@ function setLocalStorage() {
 
 
 
-
+/*==ВИДЖЕТ ПОГОДЫ======================================================================*/
   
 const weatherIcon = document.querySelector('.weather-icon');
 const temperature = document.querySelector('.temperature');
@@ -106,6 +116,7 @@ city.addEventListener('keypress', setCity);
 
 
 
+/*=СОХРАНЕНИЕ ВВЕДЕННОГО ГОРОДА========================================= */
 
 function setLocalCityStorage() {
     const city = document.querySelector('.city')
@@ -122,3 +133,22 @@ function setLocalCityStorage() {
     }
   }
   window.addEventListener('load', getLocalCityStorage)
+
+
+
+
+/*=ВИДЖЕТ ЦИТАТА ДНЯ==================================================================== */
+
+async function getQuotes() {  
+    const quotes = `https://type.fit/api/quotes`;
+    const res = await fetch(quotes);
+    const data = await res.json(); 
+
+        let j = Math.floor(Math.random()*data.length)
+        let quote = data[j].text;
+        let author = data[j].author;
+        document.querySelector('.quote').innerHTML = quote;
+        document.querySelector('.author').innerHTML = author;
+  }
+  getQuotes();
+  

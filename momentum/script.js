@@ -151,4 +151,5 @@ async function getQuotes() {
         document.querySelector('.author').innerHTML = author;
   }
   getQuotes();
+  document.querySelector('.change-quote').addEventListener('click', getQuotes)
   

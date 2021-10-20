@@ -43,16 +43,16 @@ function getTimeOfDay(){
     const date = new Date();
     const hours = date.getHours();
     if(hours>=0 && hours<6){
-        timeOfDay = `Night`
+        timeOfDay = `night`
     }
     else if(hours>=6 && hours<12){
-        timeOfDay = `Morning`
+        timeOfDay = `morning`
     }
     else if(hours>=12 && hours<18){
-        timeOfDay = `Day`
+        timeOfDay = `afternoon`
     }
     else if(hours>=18 && hours<24){
-        timeOfDay = `Evening`
+        timeOfDay = `evening`
     }
 return document.querySelector('.greeting').innerHTML = `Good ${timeOfDay},` ;
 }
@@ -81,7 +81,9 @@ function setLocalStorage() {
 
   window.addEventListener('load', getLocalStorage)
 
-
+/*=СЛАЙДЕР ИЗОБРАЖЕНИЙ========================================================================================= */
+const body = document.querySelector('body')
+body.style.backgroundImage = "url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/evening/18.jpg')";
 
 /*==ВИДЖЕТ ПОГОДЫ======================================================================*/
   
@@ -173,7 +175,7 @@ let songIndex = 0;
 
 function loadSong(song){
   audio.src = `../momentum/audio/${song}.mp3`;
-  console.log(songIndex)
+  // console.log(songIndex)
 }
 loadSong(songs[songIndex])
 

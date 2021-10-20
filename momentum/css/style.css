@@ -37,15 +37,14 @@ body {
   justify-content: space-between;
   width: 120px;
   margin-bottom: 28px;
+  color: #d4c36c;
 }
 
 .play-list {
   text-align: left;
 }
-.play-list li{
-  list-style: none;
-  padding-bottom: 15px;
-}
+
+
 .play-item {
   position: relative;
   padding: 5px;

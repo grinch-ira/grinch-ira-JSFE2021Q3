@@ -162,19 +162,49 @@ const playBtn = document.querySelector('.play')
 const prevBtn = document.querySelector('.play-prev')
 const nextBtn = document.querySelector('.play-next')
 const audio = document.querySelector('.audio')
+const title = document.querySelector('.audio-title')
+const title1 = document.querySelector('.audio-title1')
+const title2 = document.querySelector('.audio-title2')
+const title3 = document.querySelector('.audio-title3')
 
-const songs = ['1', '2', '3','4'];
+const songs = ['Aqua Caelestis', 'River Flows In You', 'Nu Jazz Vibrations','Good Night Lovers'];
 let songIndex = 0;
 
+
 function loadSong(song){
-  audio.src = `../momentum/audio/${song}.mp3`
+  audio.src = `../momentum/audio/${song}.mp3`;
+  console.log(songIndex)
 }
 loadSong(songs[songIndex])
 
+
 function playSong(){
+  title.style.color = '#d4c36c'
   audio.currentTime = 0;
   playBtn.classList.add('pause')
   audio.play()
+  if(songIndex==1){
+    title.style.color = '#fff'
+    title1.style.color = "#d4c36c";
+  }
+  else if(songIndex==2){
+    title.style.color = '#fff'
+    title1.style.color = "#fff";
+    title2.style.color = '#d4c36c'
+  }
+  else if(songIndex==3){
+    title.style.color = '#fff'
+    title1.style.color = "#fff";
+    title2.style.color = '#fff'
+    title3.style.color = '#d4c36c'
+  }
+  else if(songIndex==0){
+    // title.style.color = '#fff'
+    title1.style.color = "#fff";
+    title2.style.color = '#fff'
+    title3.style.color = '#fff'
+  }
+
 }
 function pauseSong(){
   playBtn.classList.remove('pause')
@@ -187,6 +217,7 @@ playBtn.addEventListener('click',()=>{
   if(isPlay){
     pauseSong()
   }else{
+
     playSong()
   }
 })
@@ -216,6 +247,10 @@ function playPrev(){
 }
 
 prevBtn.addEventListener('click', playPrev)
+
+
+
+
 
 /*=ПЕРЕВОД ПРИЛОЖЕНИЯ НА ДВА ЯЗЫКА=============================================================================================================== */
 

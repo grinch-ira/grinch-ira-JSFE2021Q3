@@ -153,3 +153,66 @@ async function getQuotes() {
   getQuotes();
   document.querySelector('.change-quote').addEventListener('click', getQuotes)
   
+
+  /*=АУДИОПЛЕЕР======================================================================================== */
+  
+  // const player = document.querySelector('.player')
+  // const playBtn = document.querySelector('.play')
+  // const prevDtn = document.querySelector('.play-prev')
+  // const nextBtn = document.querySelector('.play-next')
+  // const audio = document.querySelector('.audio')
+
+  // const songs = ['1', '2', '3','4']
+
+//   function playSong(){
+//     audio.currentTime = 0;
+//     player.classList.add('playing')
+//     audio.play()
+//   }
+
+//   function pauseSong(){
+//     player.classList.remove('playing')
+//     audio.pause();
+//   }
+
+//   playBtn.addEventListener('click', ()=>{
+// const isPlay = player.classList.contains('playing')
+// if(isPlay){
+//   pauseSong()
+// }else{
+//   playSong()
+// }
+//   })
+
+const player = document.querySelector('.player')
+const playBtn = document.querySelector('.play')
+const prevDtn = document.querySelector('.play-prev')
+const nextBtn = document.querySelector('.play-next')
+const audio = document.querySelector('.audio')
+
+const songs = ['1', '2', '3','4']
+
+function playSong(){
+  audio.currentTime = 0;
+  playBtn.classList.add('pause')
+  audio.play()
+}
+function pauseSong(){
+  playBtn.classList.remove('pause')
+  audio.pause();
+}
+
+
+playBtn.addEventListener('click',()=>{
+  const isPlay = playBtn.classList.contains('pause')
+  if(isPlay){
+    pauseSong()
+  }else{
+    playSong()
+  }
+})
+
+/*=ПЕРЕВОД ПРИЛОЖЕНИЯ НА ДВА ЯЗЫКА=============================================================================================================== */
+
+
+

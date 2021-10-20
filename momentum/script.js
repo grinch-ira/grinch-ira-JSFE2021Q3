@@ -93,7 +93,8 @@ const humidity = document.querySelector('.humidity')
 const city = document.querySelector('.city');
 
 async function getWeather() {
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=en&appid=08f2a575dda978b9c539199e54df03b0&units=metric`;
+  // const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=en&appid=08f2a575dda978b9c539199e54df03b0&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=en&appid=6ca4f8e8233d5ec397fcd5132046e186&units=metric`
   const res = await fetch(url);
   const data = await res.json();
   weatherIcon.className = 'weather-icon owf';
@@ -156,41 +157,19 @@ async function getQuotes() {
 
   /*=АУДИОПЛЕЕР======================================================================================== */
   
-  // const player = document.querySelector('.player')
-  // const playBtn = document.querySelector('.play')
-  // const prevDtn = document.querySelector('.play-prev')
-  // const nextBtn = document.querySelector('.play-next')
-  // const audio = document.querySelector('.audio')
-
-  // const songs = ['1', '2', '3','4']
-
-//   function playSong(){
-//     audio.currentTime = 0;
-//     player.classList.add('playing')
-//     audio.play()
-//   }
-
-//   function pauseSong(){
-//     player.classList.remove('playing')
-//     audio.pause();
-//   }
-
-//   playBtn.addEventListener('click', ()=>{
-// const isPlay = player.classList.contains('playing')
-// if(isPlay){
-//   pauseSong()
-// }else{
-//   playSong()
-// }
-//   })
-
 const player = document.querySelector('.player')
 const playBtn = document.querySelector('.play')
-const prevDtn = document.querySelector('.play-prev')
+const prevBtn = document.querySelector('.play-prev')
 const nextBtn = document.querySelector('.play-next')
 const audio = document.querySelector('.audio')
 
-const songs = ['1', '2', '3','4']
+const songs = ['1', '2', '3','4'];
+let songIndex = 0;
+
+function loadSong(song){
+  audio.src = `../momentum/audio/${song}.mp3`
+}
+loadSong(songs[songIndex])
 
 function playSong(){
   audio.currentTime = 0;
@@ -211,6 +190,32 @@ playBtn.addEventListener('click',()=>{
     playSong()
   }
 })
+
+
+
+function playNext(){
+  songIndex++;
+  if(songIndex>songs.length -1){
+    songIndex = 0;
+  }
+  loadSong(songs[songIndex])
+  playSong()
+}
+
+nextBtn.addEventListener('click', playNext)
+
+
+
+function playPrev(){
+  songIndex--;
+  if(songIndex<0){
+    songIndex = songs.length-1;
+  }
+  loadSong(songs[songIndex])
+  playSong()
+}
+
+prevBtn.addEventListener('click', playPrev)
 
 /*=ПЕРЕВОД ПРИЛОЖЕНИЯ НА ДВА ЯЗЫКА=============================================================================================================== */
 

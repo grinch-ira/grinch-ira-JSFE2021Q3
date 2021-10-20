@@ -42,7 +42,10 @@ body {
 .play-list {
   text-align: left;
 }
-
+.play-list li{
+  list-style: none;
+  padding-bottom: 15px;
+}
 .play-item {
   position: relative;
   padding: 5px;

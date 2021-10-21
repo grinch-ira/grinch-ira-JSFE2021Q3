@@ -89,6 +89,7 @@ function setLocalStorage() {
 const body = document.querySelector('body')
 // body.style.backgroundImage = "url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/evening/18.jpg')";
 // body.style.backgroundImage = "url('https://raw.githubusercontent.com/grinch-ira/stage1-tasks/assets/images/morning/06.jpg')"
+// body.style.backgroundImage = `url(https://raw.githubusercontent.com/grinch-ira/stage1-tasks/assets/images/${getTimeOfDay()}/${bgNum}.jpg)`
 
 
 
@@ -103,8 +104,14 @@ function setBg(){
   // let timeOfDay = getTimeOfDay();
   let num = getRandomNum().toString()
   let bgNum = num.padStart(2,'0')
-  body.style.backgroundImage = `url(https://raw.githubusercontent.com/grinch-ira/stage1-tasks/assets/images/${getTimeOfDay()}/${bgNum}.jpg)`
+  // body.style.backgroundImage = `url(https://raw.githubusercontent.com/grinch-ira/stage1-tasks/assets/images/${getTimeOfDay()}/${bgNum}.jpg)`
 
+
+  const img = new Image();
+  img.src = `https://raw.githubusercontent.com/grinch-ira/stage1-tasks/assets/images/${getTimeOfDay()}/${bgNum}.jpg`
+  img.onload = ()=>{
+    body.style.backgroundImage = `url(${img.src})`
+  }
   return bgNum;
 }
 

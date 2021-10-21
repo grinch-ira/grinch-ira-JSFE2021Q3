@@ -42,6 +42,7 @@ function getTimeOfDay(){
     let timeOfDay;
     const date = new Date();
     const hours = date.getHours();
+  
     if(hours>=0 && hours<6){
         timeOfDay = `night`
     }
@@ -54,9 +55,12 @@ function getTimeOfDay(){
     else if(hours>=18 && hours<24){
         timeOfDay = `evening`
     }
-return document.querySelector('.greeting').innerHTML = `Good ${timeOfDay},` ;
+
+ document.querySelector('.greeting').innerHTML = `Good ${timeOfDay},` ;
+ return timeOfDay
 }
 getTimeOfDay();
+console.log(getTimeOfDay())
 
 
 
@@ -81,9 +85,58 @@ function setLocalStorage() {
 
   window.addEventListener('load', getLocalStorage)
 
-/*=СЛАЙДЕР ИЗОБРАЖЕНИЙ========================================================================================= */
+/*=ФОНОВОЕ ИЗОБРАЖЕНИЕ ИЗ КОЛЛЕКЦИИ ИЗОБРАЖЕНИЙ========================================================================================= */
 const body = document.querySelector('body')
-body.style.backgroundImage = "url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/evening/18.jpg')";
+// body.style.backgroundImage = "url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/evening/18.jpg')";
+// body.style.backgroundImage = "url('https://raw.githubusercontent.com/grinch-ira/stage1-tasks/assets/images/morning/06.jpg')"
+
+
+
+let randomNum;
+
+function getRandomNum(min, max){
+  return randomNum = Math.floor(Math.random()*20+1);
+}
+
+
+function setBg(){
+  // let timeOfDay = getTimeOfDay();
+  let num = getRandomNum().toString()
+  let bgNum = num.padStart(2,'0')
+  body.style.backgroundImage = `url(https://raw.githubusercontent.com/grinch-ira/stage1-tasks/assets/images/${getTimeOfDay()}/${bgNum}.jpg)`
+
+  return bgNum;
+}
+
+console.log(setBg())
+
+/*=СЛАЙДЕР ИЗОБРАЖЕНИЙ================================================================================================== */
+
+const slideNext = document.querySelector('.slide-next');
+const slidePrev = document.querySelector('.slide-prev');
+
+function getSlideNext(){
+  randomNum++;
+  if(randomNum>20){
+    randomNum = 1;
+  }
+  let num = randomNum.toString().padStart(2,'0')
+  body.style.backgroundImage = `url(https://raw.githubusercontent.com/grinch-ira/stage1-tasks/assets/images/${getTimeOfDay()}/${num}.jpg)`
+
+}
+function getSlidePrev(){
+  randomNum--;
+  if(randomNum<1){
+    randomNum = 20;
+  }
+  let num = randomNum.toString().padStart(2,'0')
+  body.style.backgroundImage = `url(https://raw.githubusercontent.com/grinch-ira/stage1-tasks/assets/images/${getTimeOfDay()}/${num}.jpg)`
+
+ 
+}
+slideNext.addEventListener('click', getSlideNext);
+slidePrev.addEventListener('click', getSlidePrev);
+
 
 /*==ВИДЖЕТ ПОГОДЫ======================================================================*/
   

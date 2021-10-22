@@ -95,7 +95,7 @@ const body = document.querySelector('body')
 
 let randomNum;
 
-function getRandomNum(min, max){
+function getRandomNum(){
   return randomNum = Math.floor(Math.random()*20+1);
 }
 
@@ -104,9 +104,6 @@ function setBg(){
   // let timeOfDay = getTimeOfDay();
   let num = getRandomNum().toString()
   let bgNum = num.padStart(2,'0')
-  // body.style.backgroundImage = `url(https://raw.githubusercontent.com/grinch-ira/stage1-tasks/assets/images/${getTimeOfDay()}/${bgNum}.jpg)`
-
-
   const img = new Image();
   img.src = `https://raw.githubusercontent.com/grinch-ira/stage1-tasks/assets/images/${getTimeOfDay()}/${bgNum}.jpg`
   img.onload = ()=>{
@@ -128,8 +125,11 @@ function getSlideNext(){
     randomNum = 1;
   }
   let num = randomNum.toString().padStart(2,'0')
-  body.style.backgroundImage = `url(https://raw.githubusercontent.com/grinch-ira/stage1-tasks/assets/images/${getTimeOfDay()}/${num}.jpg)`
-
+  const img = new Image();
+  img.src = `https://raw.githubusercontent.com/grinch-ira/stage1-tasks/assets/images/${getTimeOfDay()}/${num}.jpg`
+  img.onload = ()=>{
+    body.style.backgroundImage = `url(${img.src})`
+  }
 }
 function getSlidePrev(){
   randomNum--;
@@ -137,10 +137,13 @@ function getSlidePrev(){
     randomNum = 20;
   }
   let num = randomNum.toString().padStart(2,'0')
-  body.style.backgroundImage = `url(https://raw.githubusercontent.com/grinch-ira/stage1-tasks/assets/images/${getTimeOfDay()}/${num}.jpg)`
-
- 
+  const img = new Image();
+  img.src = `https://raw.githubusercontent.com/grinch-ira/stage1-tasks/assets/images/${getTimeOfDay()}/${num}.jpg`
+  img.onload = ()=>{
+    body.style.backgroundImage = `url(${img.src})`
+  }
 }
+
 slideNext.addEventListener('click', getSlideNext);
 slidePrev.addEventListener('click', getSlidePrev);
 

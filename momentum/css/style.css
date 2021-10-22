@@ -276,6 +276,23 @@ body {
   justify-content: space-between;
 }
 .settings {
+  font-size: 44px;
+  border: 0px;
+  outline: 0px;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.owf-950::before, .owf-950-d::before, .owf-950-n::before{
+  content: '\EE16';
+}
+.owf {
+  display: inline-block;
+  font: normal normal normal 44px/1 owfont;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  transform: translate(0, 0);
 }
 .about-me__github {
 }

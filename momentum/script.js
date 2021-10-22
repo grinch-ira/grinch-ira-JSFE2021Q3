@@ -264,7 +264,7 @@ function playSong(){
     title3.style.color = '#d4c36c'
   }
   else if(songIndex==0){
-    // title.style.color = '#fff'
+    title.style.color = '#d4c36c'
     title1.style.color = "#fff";
     title2.style.color = '#fff'
     title3.style.color = '#fff'

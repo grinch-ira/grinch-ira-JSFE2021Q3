@@ -267,6 +267,33 @@ body {
   min-height: 20px;
 }
 
+.footer__about-me {
+
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.settings {
+}
+.about-me__github {
+}
+.my-github__link {
+  color: inherit;
+  text-decoration: none;
+}
+.footer-rsschool{
+  width: 94px;
+  height: 100%;
+  background: url('../assets/svg/rss.svg') center center/contain no-repeat;
+}
+.rsschool-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 @media (max-width: 768px) {
   .time {
     min-height: 80px;

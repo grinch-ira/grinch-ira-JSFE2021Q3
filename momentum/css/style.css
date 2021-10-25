@@ -311,14 +311,24 @@ body {
   height: 100%;
 }
 
+.change-lang{
+  background-color: #b184b3;
+  opacity: 0.6;
+  font-style: italic;
+  color: oldlace;
+  padding: 10px;
+  border-radius:20px;
+  font-size: 20px;
+}
+
 /* .settingss {
 opacity: 0.6;
   position: absolute;
-  border-radius:20px ;
+
   left: 0;
   bottom: 0;
   padding: 70px 30px 30px 30px;
-  background-color: #d8a8eb;
+  background-color: #b2a5b8;
   width: calc(100vw / 2.5);
 }
 .close {
@@ -328,7 +338,7 @@ opacity: 0.6;
   width: 25px;
   height: 25px;
   background: url('../assets/svg/close.svg') center center/contain no-repeat;
-  opacity: 0.8;
+
   transition: opacity 0.3s ease;
   cursor: pointer;
 } */

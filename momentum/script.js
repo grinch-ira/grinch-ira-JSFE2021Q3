@@ -91,8 +91,6 @@ const body = document.querySelector('body')
 // body.style.backgroundImage = "url('https://raw.githubusercontent.com/grinch-ira/stage1-tasks/assets/images/morning/06.jpg')"
 // body.style.backgroundImage = `url(https://raw.githubusercontent.com/grinch-ira/stage1-tasks/assets/images/${getTimeOfDay()}/${bgNum}.jpg)`
 
-
-
 let randomNum;
 
 function getRandomNum(){
@@ -192,14 +190,6 @@ function setLocalCityStorage() {
 
 
 
-  function getLocalCityStorage() {
-    const city = document.querySelector('.city')
-    if(localStorage.getItem('city')) {
-      city.value = localStorage.getItem('city');
-    }
-  }
-  window.addEventListener('load', getLocalCityStorage)
-
 
 
 
@@ -251,11 +241,14 @@ function playSong(){
   if(songIndex==1){
     title.style.color = '#fff'
     title1.style.color = "#d4c36c";
+    title2.style.color = '#fff'
+    title3.style.color = '#fff'
   }
   else if(songIndex==2){
     title.style.color = '#fff'
     title1.style.color = "#fff";
     title2.style.color = '#d4c36c'
+    title3.style.color = '#fff'
   }
   else if(songIndex==3){
     title.style.color = '#fff'
@@ -287,8 +280,6 @@ playBtn.addEventListener('click',()=>{
   }
 })
 
-
-
 function playNext(){
   songIndex++;
   if(songIndex>songs.length -1){
@@ -300,8 +291,6 @@ function playNext(){
 
 nextBtn.addEventListener('click', playNext)
 
-
-
 function playPrev(){
   songIndex--;
   if(songIndex<0){
@@ -311,6 +300,8 @@ function playPrev(){
   playSong()
 }
 
+
+
 prevBtn.addEventListener('click', playPrev)
 
 
@@ -319,5 +310,4 @@ prevBtn.addEventListener('click', playPrev)
 
 /*=ПЕРЕВОД ПРИЛОЖЕНИЯ НА ДВА ЯЗЫКА=============================================================================================================== */
 
-
-
+/*НАСТРОЙКИ======================================================================================================= */

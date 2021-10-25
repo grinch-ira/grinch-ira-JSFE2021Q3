@@ -311,6 +311,32 @@ body {
   height: 100%;
 }
 
+/* .settingss {
+opacity: 0.6;
+  position: absolute;
+  border-radius:20px ;
+  left: 0;
+  bottom: 0;
+  padding: 70px 30px 30px 30px;
+  background-color: #d8a8eb;
+  width: calc(100vw / 2.5);
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  background: url('../assets/svg/close.svg') center center/contain no-repeat;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+} */
+.close-settings {
+}
+.settings-item {
+}
+
 @media (max-width: 768px) {
   .time {
     min-height: 80px;

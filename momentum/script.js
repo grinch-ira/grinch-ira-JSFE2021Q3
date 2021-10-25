@@ -166,8 +166,8 @@ async function getWeather() {
   weatherIcon.classList.add(`owf-${data.weather[0].id}`);
   temperature.textContent = Math.round((data.main.temp)) +` °C`;
   weatherDescription.textContent = data.weather[0].description;
-  windSpeed.textContent = Math.round(data.wind.speed) + ` m/s`;
-  humidity.textContent = Math.round(data.main.humidity) + ` %`;
+  windSpeed.textContent =`Wind speed: ` + Math.round(data.wind.speed) + ` m/s`;
+  humidity.textContent =`Humidity: `+ Math.round(data.main.humidity) + ` %`;
 }
 
 function setCity(event) {

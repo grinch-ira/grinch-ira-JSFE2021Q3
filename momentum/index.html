@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>momentum</title>
+</head>
+<body>
+  <header class="header">
+    <div class="player">
+      <div class="player-controls">
+        <button class="play-prev player-icon"></button>
+        <button class="play  player-icon"></button>
+        <button class="play-next player-icon"></button>
+      </div>
+      <ul class="play-list">
+        <li class = 'audio-title play-item'><audio class="audio" src="../momentum/audio/Aqua Caelestis.mp3"></audio>Aqua Caelestis</li>
+        <!-- <li class = 'audio-title'><audio src="../momentum/audio/River Flows In You.mp3"></audio>River Flows In You</li>
+        <li class = 'audio-title'><audio src="../momentum/audio/Nu Jazz Vibrations.mp3"></audio> Nu Jazz Vibrations</li>
+        <li class = 'audio-title'><audio src="../momentum/audio/Good Night Lovers.mp3"></audio>Good Night Lovers</li> -->
+        <li class = 'audio-title1  play-item'>River Flows In You</li>
+        <li class = 'audio-title2  play-item'>Nu Jazz Vibrations</li>
+        <li class = 'audio-title3  play-item'>Good Night Lovers</li>
+      </ul>
+    </div>
+    <div class="weather ">
+      <input type="text" class="city" value="Minsk" name="" />
+      <i class="weather-icon owf"></i>
+      <div class="weather-error"></div>
+      <div class="description-container">
+        <span class="temperature"></span>
+        <span class="weather-description"></span>
+      </div>
+      <div class="wind"></div>
+      <div class="humidity"></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon"></button>
+      <button class="slide-next slider-icon"></button>
+    </div>
+    <time class="time"></time>
+    <date class="date"></date>
+    <div class="greeting-container">
+      <span class="greeting"> Good</span>
+      <input type="text" class="name" placeholder="[Enter name]" name="" value=""/>
+    </div>
+  </main>
+  <footer class="footer">
+    <button class="change-quote" ></button>
+    <div class="quote-container">
+      <div class="quote"></div>
+      <div class="author"></div>
+    </div>
+    <div class="footer__about-me">
+      <!-- <i class="settings owf owf-950"></i> -->
+      <select class = 'change-lang' name="" id="">
+        <option value="en" selected> EN</option>
+        <option value="ru">RU</option>
+      </select>
+      <div class="about-me__github">2021
+        <a href="https://github.com/grinch-ira" class="my-github__link" target="_blank">Hryniuk Iryna</a>
+      </div>
+      <div class="footer-rsschool">
+        <a href="https://rs.school/js/" class="rsschool-link" target="_blank"></a>
+      </div>
+    </div>
+  </footer>
+  <div class="settingss">
+    <div class="close close-settings"></div>
+    <div class="settings-item"></div>
+    <div class="settings-item"></div>
+    <div class="settings-item"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
